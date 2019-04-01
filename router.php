@@ -89,3 +89,15 @@ $app->post('/city[/{id_city}]', function ($request, $response, $args){
 
     echo $data['msg'];
 });
+
+$app->get('/del-city/{id_city}', function ($request, $response, $args){
+    $query = 'DELETE FROM city WHERE city_id = ?';
+    $stmt = $this->pdo->prepare($query);
+    $res = $stmt->execute([$args['id_city']]);
+
+    if($res){
+        echo 'Delete data kota id '.$args['id_city'].' berhasil';
+    }else{
+        echo 'Delete data kota id '.$args['id_city'].' gagal';
+    }
+});

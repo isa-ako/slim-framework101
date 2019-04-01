@@ -11,12 +11,16 @@
 			<th>id</th>
 			<th>Nama Kota</th>
 			<th>Nama Negara</th>
+			<th>Aksi</th>
 		</tr>
 		<?php foreach($kota as $value): ?>
 		<tr>
 			<td><?= $value['city_id'] ?></td>
 			<td><?= $value['city'] ?></td>
 			<td><?= $value['country'] ?></td>
+			<td>
+				<a href="">delete</a>
+			</td>
 		</tr>
 		<?php endforeach ?>
 	</table>
